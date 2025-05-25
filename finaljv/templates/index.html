@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clasificador de Vino Blanco</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef1f5;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Clasificador de Vino Blanco</h2>
+    <form action="/clasificar" method="POST">
+      <div class="form-group">
+        <label for="acidez_fija">Acidez fija (3.8 - 14.2)</label>
+        <input type="number" step="0.0001" id="acidez_fija" name="acidez_fija" value=6.6 required>
+      </div>
+
+      <div class="form-group">
+        <label for="acidez_volatil">Acidez volátil (0.08 - 1.1)</label>
+        <input type="number" step="0.0001" id="acidez_volatil" name="acidez_volatil" value=0.16 required>
+      </div>
+
+      <div class="form-group">
+        <label for="acido_citrico">Ácido cítrico (0.0 - 1.66)</label>
+        <input type="number" step="0.0001" id="acido_citrico" name="acido_citrico" value=0.32 required>
+      </div>
+
+      <div class="form-group">
+        <label for="azucar_residual">Azúcar residual (0.6 - 65.8)</label>
+        <input type="number" step="0.0001" id="azucar_residual" name="azucar_residual" value=1.4 required>
+      </div>
+
+      <div class="form-group">
+        <label for="cloruros">Cloruros (0.009 - 0.346)</label>
+        <input type="number" step="0.0001" id="cloruros" name="cloruros" value=0.035 required>
+      </div>
+
+      <div class="form-group">
+        <label for="so2_libre">Dióxido de azufre libre (2.0 - 289.0)</label>
+        <input type="number" step="0.0001" id="so2_libre" name="so2_libre" value=49 required>
+      </div>
+
+      <div class="form-group">
+        <label for="so2_total">Dióxido de azufre total (9.0 - 440.0)</label>
+        <input type="number" step="0.0001" id="so2_total" name="so2_total" value=186 required>
+      </div>
+
+      <div class="form-group">
+        <label for="densidad">Densidad (0.98711 - 1.03898)</label>
+        <input type="number" step="0.000001" id="densidad" name="densidad" value=0.9906 required>
+      </div>
+
+      <div class="form-group">
+        <label for="ph">pH (2.72 - 3.82)</label>
+        <input type="number" step="0.0001" id="ph" name="ph" value=3.35 required>
+      </div>
+
+      <div class="form-group">
+        <label for="sulfatos">Sulfatos (0.22 - 1.08)</label>
+        <input type="number" step="0.0001" id="sulfatos" name="sulfatos" value=0.64 required>
+      </div>
+
+      <div class="form-group">
+        <label for="alcohol">Alcohol (8.0 - 14.2)</label>
+        <input type="number" step="0.0000001" id="alcohol" name="alcohol" value=12.4 required>
+      </div>
+
+      <button type="submit">PREDECIR</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de la clasificación</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f9;
+      margin: 40px;
+    }
+	img{
+		margin: 40px;
+	}
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 70%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resultados de la clasificación del Vino</h1>
+  <table id="wineTable">
+    <thead>
+      <tr>
+        <th>Parámetro</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí se insertarán los datos con JavaScript -->
+		<tr>
+			<td>ACIDEZ FIJA</td>
+			<td>{{ datos['acidez_fija'] }}</td>
+		</tr>
+		<tr>
+			<td>ACIDEZ VOLÁTIL</td>
+			<td>{{ datos['acidez_volatil'] }}</td>
+		</tr>
+		<tr>
+			<td>ÁCIDO CÍTRICO</td>
+			<td>{{ datos['acido_citrico'] }}</td>
+		</tr>
+		<tr>
+			<td>AZÚCAR RESIDUAL</td>
+			<td>{{ datos['azucar_residual'] }}</td>
+		</tr>
+		<tr>
+			<td>CLORUROS</td>
+			<td>{{ datos['cloruros'] }}</td>
+		</tr>
+		<tr>
+			<td>DIÓXIDO SULFÚRICO LIBRE</td>
+			<td>{{ datos['dioxido_sulfurico_libre'] }}</td>
+		</tr>
+		<tr>
+			<td>DIÓXIDO SULFÚRICO TOTAL</td>
+			<td>{{ datos['dioxido_sulfurico_total'] }}</td>
+		</tr>
+		<tr>
+			<td>DENSIDAD</td>
+			<td>{{ datos['densidad'] }}</td>
+		</tr>
+		<tr>
+			<td>PH</td>
+			<td>{{ datos['ph'] }}</td>
+		</tr>
+		<tr>
+			<td>SULFATOS</td>
+			<td>{{ datos['sulfatos'] }}</td>
+		</tr>
+		<tr>
+			<td>ALCOHOL</td>
+			<td>{{ datos['alcohol'] }}</td>
+		</tr>
+		<tr>
+			<td>CALIDAD</td>
+			<td style="color: {{ datos['color'] }} !important;"><b>{{ datos['calidad'] }}</b></td>
+		</tr>
+    </tbody>
+  </table>
+  <div align="center">
+	<img src="data:image/png;base64, {{ datos['img_dataset'] }}" width="500" height="340">
+	<img src="data:image/png;base64, {{ datos['img_ingresos'] }}" width="500" height="340">
+  </div>
+</body>
+  
+  <!--
+  <img src="data:image/png;base64, {{ datos['img_dataset'] }}">
+  <img src="data:image/png;base64, {{ datos['img_ingresos'] }}">
+  -->
